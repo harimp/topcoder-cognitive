@@ -1,0 +1,36 @@
+{
+  "name": "topcoder-cognitive",
+  "version": "0.1.0",
+  "description": "cognitive.topcoder.com",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "node ./node_modules/nodemon/bin/nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harimp/topcoder-cognitive.git"
+  },
+  "keywords": [
+    "topcoder",
+    "bluemix"
+  ],
+  "author": "harimp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harimp/topcoder-cognitive/issues"
+  },
+  "homepage": "https://github.com/harimp/topcoder-cognitive#readme",
+  "dependencies": {
+    "express": "^4.15.0",
+    "pug": "^2.0.0-beta11"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "nodemon": "^1.11.0"
+  }
+}
