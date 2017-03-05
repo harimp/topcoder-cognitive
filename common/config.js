@@ -1,6 +1,9 @@
 const nconf = require('nconf');
 
 nconf.argv()
-  .env('_');
+  .env({
+    separator: '_',
+    lowerCase: true,
+  });
 
 module.exports = nconf;
