@@ -8,6 +8,9 @@
     "start": "node ./app.js",
     "dev": "node ./node_modules/nodemon/bin/nodemon ./app.js"
   },
+  "engines": {
+    "node": ">=6.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harimp/topcoder-cognitive.git"
