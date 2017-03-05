@@ -27,7 +27,9 @@
   "homepage": "https://github.com/harimp/topcoder-cognitive#readme",
   "dependencies": {
     "express": "^4.15.0",
-    "pug": "^2.0.0-beta11"
+    "nconf": "^0.8.4",
+    "pug": "^2.0.0-beta11",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "eslint": "^3.17.0",
