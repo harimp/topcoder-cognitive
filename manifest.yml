@@ -1,0 +1,8 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: tc-harimp-01hw
+  host: tc-harimp-01hw
+  disk_quota: 1024M

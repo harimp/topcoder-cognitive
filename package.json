@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "start": "node ./app.js",
     "dev": "node ./node_modules/nodemon/bin/nodemon ./app.js"
   },
   "repository": {
