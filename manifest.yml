@@ -6,4 +6,4 @@ applications:
   name: tc-harimp-01hw
   host: tc-harimp-01hw
   disk_quota: 1024M
-buildpack: <strong>sdk-for-nodejs_v2_8-20151209-1403</strong>
+  buildpack: <strong>sdk-for-nodejs_v2_8-20151209-1403</strong>
