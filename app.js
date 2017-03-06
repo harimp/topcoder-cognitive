@@ -6,7 +6,7 @@ const translateRouter = require('./app/routes/translate-router');
 const historyRouter = require('./app/routes/history-router');
 
 const app = express();
-const port = config.get('port') || 3000;
+const port = config.get('PORT') || 3000;
 
 app.use(morgan('dev'));
 
