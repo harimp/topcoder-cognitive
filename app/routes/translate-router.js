@@ -1,5 +1,5 @@
 const express = require('express');
-const translateController = require('../translate/translate-controller');
+const translateController = require('../controller/translate-controller');
 const validator = require('../validator');
 const errorHandler = require('../errorHandler');
 
