@@ -19,9 +19,11 @@ const createLogger = (loggerLabel) => {
     colors: customLevels.colors,
     transports: [
       new winston.transports.Console({
+        label: loggerLabel,
         level: 'trace',
         colorize: true,
-        label: loggerLabel,
+        timestamp: true,
+        prettyPrint: true,
       }),
     ],
   });
