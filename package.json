@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/harimp/topcoder-cognitive#readme",
   "dependencies": {
+    "cloudant": "^1.7.1",
     "express": "^4.15.0",
     "joi": "^10.2.2",
     "morgan": "^1.8.1",

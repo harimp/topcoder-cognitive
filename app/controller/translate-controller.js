@@ -1,5 +1,6 @@
 const LanguageTranslationV2 = require('watson-developer-cloud/language-translation/v2');
 const logger = require('../common/logger')('translate');
+const historyController = require('./history-controller');
 const config = require('../common/config');
 
 const getTranslator = function getTranslator() {
@@ -45,9 +46,10 @@ const translate = function translate(sourceText, sourceLang, destLang) {
         resolve(null);
       }
       logger.trace('Translation results', translation);
+      historyController.loadToDB(translation);
       resolve(translation);
     });
-  }).then(result => result);
+  });
 };
 
 module.exports = {
