@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node ./app.js",
-    "dev": "node ./node_modules/nodemon/bin/nodemon ./app.js"
+    "dev": "node ./node_modules/nodemon/bin/nodemon ./app.js --ignore public --ignore views"
   },
   "engines": {
     "node": ">=6.10.0"

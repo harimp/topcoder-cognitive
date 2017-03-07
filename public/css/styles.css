@@ -1,0 +1,26 @@
+#main-header {
+  background-color: #2980b9;
+  color: white;
+  margin: 10px;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+#button-space {
+  text-align: right;
+  padding: 10px;
+}
+
+#select-space {
+  padding: 10px;
+  padding-top: 15px;
+}
+
+#input-space {
+  padding: 10px;
+}
+
+#result-pane {
+  background-color: #ecf0f1;
+  padding: 15px;
+}
