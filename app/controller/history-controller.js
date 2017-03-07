@@ -30,10 +30,31 @@ const loadToDB = function loadToDB(item) {
 
 const searchLatest = function searchLatest(limit) {
   const query = {
-    selector: { _id: { $gt: 0 } },
-    fields: ['_id', '_rev', 'content'],
+    selector: {
+      _id: {
+        $gt: 0,
+      },
+      content: {
+        $exists: true,
+        $not: {
+          translation: null,
+        },
+      },
+      $not: {
+        content: null,
+      },
+    },
     limit,
-    sort: [{ _id: 'desc' }],
+    fields: [
+      '_id',
+      '_rev',
+      'content',
+    ],
+    sort: [
+      {
+        _id: 'desc',
+      },
+    ],
   };
   return new Promise((resolve, reject) => {
     getDBConn().find(query, (err, result) => {

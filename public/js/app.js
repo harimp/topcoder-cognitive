@@ -11,5 +11,25 @@ $('form').submit((e) => {
       } else {
         $('#result-pane').text(data.result.translations[0].translation);
       }
+      updateHistory();
     });
 });
+
+function updateHistory() {
+  const url = '/api/history'
+  $.ajax(url)
+    .done((data, status, xhr) => {
+      $('#history').text('');
+      const docs = data.docs;
+      docs.forEach((doc) => {
+        const translation = doc.content.translation.translations[0].translation;
+        const sourceText = doc.content.sourceText;
+        const destLang = doc.content.destLang;
+        $('#history').append(
+          `<tr><td>${sourceText}</td><td>${destLang}</td><td>${translation}</td></tr>`
+        );
+      })
+    });
+}
+
+updateHistory();

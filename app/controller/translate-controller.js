@@ -42,7 +42,12 @@ const translatePromise = function translatePromise(sourceText, sourceLang, destL
         resolve(null);
       }
       logger.trace('Translation results', translation);
-      historyController.loadToDB(translation);
+      const doc = {
+        translation,
+        sourceText,
+        destLang,
+      };
+      historyController.loadToDB(doc);
       resolve(translation);
     });
   });
