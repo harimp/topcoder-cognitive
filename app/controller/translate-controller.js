@@ -14,7 +14,7 @@ const getTranslator = function getTranslator() {
 };
 
 const identify = function identify(sourceText) {
-  return Promise((resolve) => {
+  return new Promise((resolve) => {
     const translator = getTranslator();
     translator.identify({
       text: sourceText,
@@ -26,19 +26,15 @@ const identify = function identify(sourceText) {
       logger.trace('Translation found', language);
       resolve(language);
     });
-  }).then(result => result);
+  });
 };
 
-const translate = function translate(sourceText, sourceLang, destLang) {
+const translatePromise = function translatePromise(sourceText, sourceLang, destLang) {
   const translator = getTranslator();
-  let sourceLangCode = sourceLang;
-  if (!sourceLang) {
-    sourceLangCode = identify(sourceText);
-  }
   return new Promise((resolve) => {
     translator.translate({
       text: sourceText,
-      source: sourceLangCode,
+      source: sourceLang,
       target: destLang,
     }, (err, translation) => {
       if (err) {
@@ -50,6 +46,16 @@ const translate = function translate(sourceText, sourceLang, destLang) {
       resolve(translation);
     });
   });
+};
+
+const translate = function translate(sourceText, sourceLang, destLang) {
+  if (!sourceLang) {
+    return identify(sourceText).then((result) => {
+      logger.trace('identify result', result.languages[0].language);
+      return translatePromise(sourceText, result.languages[0].language, destLang);
+    });
+  }
+  return translatePromise(sourceText, sourceLang, destLang);
 };
 
 module.exports = {
