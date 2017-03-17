@@ -3,6 +3,6 @@ applications:
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: tc-harimp-02translate
-  host: tc-harimp-02translate
+  name: tc-harimp-03social
+  host: tc-harimp-03social
   disk_quota: 1024M
